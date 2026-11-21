@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TechMids Brand Guide (proposal)</title>
+<meta name="description" content="Proposed brand guide for TechMids: colour, type, logo, components, voice and design tokens.">
+<meta name="robots" content="noindex">
+<script>
+  // Resolve the theme before first paint. "auto" follows the OS.
+  (function () {
+    var pref = 'auto';
+    try { pref = localStorage.getItem('tm-theme') || 'auto'; } catch (e) {}
+    var dark = pref === 'dark' || (pref === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    document.documentElement.dataset.themePref = pref;
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Martian+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/techmids-tokens.css">
+<link rel="stylesheet" href="assets/guide.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="site">
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="wm" viewBox="0 0 295.32 152.71">
+    <g fill="currentColor">
+    <path d="M31.75,12.78,23.34,65.63H9.57L18,12.78H0L1.79,1.24H51.6L49.81,12.78Z"/>
+    <path d="M62.51,65.63,72.7,1.25h41.4l-1.79,11.54H84.68L82.35,27.45h23.43L104,38.54H80.56L78.06,54.1h29l-1.79,11.53Z"/>
+    <path d="M184.83,17.07a34.48,34.48,0,0,0-17.08-4.47c-14.49,0-24.86,11.09-24.86,23.88,0,9.93,6.53,17.79,17.79,17.79a45.54,45.54,0,0,0,19.4-4.47L178,62.59a48.83,48.83,0,0,1-20.3,4.29c-17.44,0-28.79-12.43-28.79-28.79C128.93,17.17,146.81,0,168.72,0c9,0,15.11,2.68,18.06,4.47Z"/>
+    <path d="M240.81,65.63l4.29-26.91H218.54l-4.29,26.91H200.48L210.67,1.25h13.77l-4.11,26h26.56l4.11-26h13.77L254.58,65.63Z"/>
+    <path d="M65,106.93l-1.34-2.5c-.27,2.06-.63,4-.89,6l-6.53,41.22H49.6L60,86.19h.09l22.62,37.56,34.61-37.56h.09L107,151.64h-6.62l6.53-41.22c.27-2,.63-3.93,1.07-6-1.16,1.43-2.86,3.31-4.29,5L81.17,133.67Z"/>
+    <path d="M138.3,151.64l10.19-64.38h6.8L145.1,151.64Z"/>
+    <path d="M176.4,151.64l10.19-64.38h17.79c17.26,0,29.33,10.55,29.33,27.45,0,22.35-18,36.93-39.17,36.93ZM192.49,93l-8.41,52.94h11.36c16.9,0,31.21-12.16,31.21-30.49,0-13.68-9.39-22.44-23.25-22.44H192.49Z"/>
+    <path d="M249.81,148.87l1.07-6.8a37.46,37.46,0,0,0,17.17,4.47c9.12,0,16.63-4.29,16.63-12.16,0-5.28-3.4-8.67-12.79-12.16-10.55-4-15.29-9-15.29-16.63,0-12.43,10.91-19.4,23.61-19.4a36.07,36.07,0,0,1,15.11,3.31l-1.07,6.620a32.65,32.65,0,0,0-14.75-3.76c-8.94,0-16,4.56-16,12,0,4.83,3,8.67,12.61,12.34,10.64,4,15.47,8.76,15.47,16.45,0,12.25-10.19,19.58-24.14,19.58A41.67,41.67,0,0,1,249.81,148.87Z"/>
+    </g>
+  </symbol>
+</svg>
+<div class="draft" role="note"><span class="badge solid">Draft</span> <span>Proposal v1.0, not signed off. Display font, logo tag and light background are still open.</span></div>
+<header class="topbar">
+  <a href="#cover" class="brand" aria-label="TechMids brand guide, top"><svg class="wm" viewBox="0 0 295.32 152.71" role="img" aria-label="TechMids"><use href="#wm"/></svg><span class="mono ver">Brand v1.0</span></a>
+  <nav aria-label="Sections"><a href="#audit">Audit</a><a href="#idea">Idea</a><a href="#logo">Logo</a><a href="#colour">Colour</a><a href="#type">Type</a><a href="#graphic-language">Graphics</a><a href="#components">Components</a><a href="#layout">Layout</a><a href="#voice">Voice</a><a href="#tokens">Tokens</a><a href="#next">Next</a></nav>
+  <div class="tools">
+    <div class="toggle" role="group" aria-label="Colour theme"><button type="button" data-set-theme="light">Light</button><button type="button" data-set-theme="dark">Dark</button><button type="button" data-set-theme="auto">Auto</button></div>
+    <a class="btn ghost sm pdf" href="pdf/techmids-brand-guide-light.pdf" data-pdf>PDF</a>
+  </div>
+</header>
+<main>
+<section id="cover" class="page inverse hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-meta"><span>/brand/guide</span><span>Proposal · v1.0 · Nov 2026</span></div>
+    <div class="lockup hero-logo"><div class="block"><svg viewBox="0 0 295.32 152.71"><use href="#wm"/></svg></div><span class="tag">Brand guide<br><span style="font-weight:400">v1.0</span></span></div>
+    <h1 class="display">Hi-vis,<br>volunteer-built,<br><span style="background:#FFFF00;color:#0A0A0A;padding:0 .12em">made in Brum.</span></h1>
+    <p class="hero-lede">The proposed brand system for TechMids: colour, type, logo, components, voice and design tokens, in light and dark.</p>
+    <div class="hero-cta"><a class="btn primary" href="#audit" style="border-color:#FFFF00">Read the guide <span class="arrow">↓</span></a><a class="btn ghost" style="color:#F2F1EC;border-color:#A3A29B" href="pdf/techmids-brand-guide-light.pdf">PDF, light</a><a class="btn ghost" style="color:#F2F1EC;border-color:#A3A29B" href="pdf/techmids-brand-guide-dark.pdf">PDF, dark</a></div>
+  </div>
+</section>
+<!-- 02 AUDIT -->
+<section id="audit" class="page">
+  <div class="eyebrow"><span class="n">01</span>/audit</div>
+  <h2>What's already there, and what's worth keeping.</h2>
+  <p class="lede">A review of <code>techmids.org</code>, <code>conf.techmids.org</code> and <code>events.techmids.org</code>. Three sites, three template defaults, one very good idea hiding in plain sight.</p>
+  <div class="grid g3 mt3">
+    <div class="panel">
+      <div class="label">Keep</div>
+      <h3 class="mt1">The yellow and the slant</h3>
+      <ul class="clean mt2">
+        <li><strong>#FFFF00 on black.</strong> Pure, loud, unmistakable. Nobody else in UK tech events owns it.</li>
+        <li><strong>The italic wordmark</strong>, heavy TECH over light MIDS.</li>
+        <li><strong>The yellow block with a tilted tag</strong> (Conf 2026, Events). It is already a system, it just hasn't been written down.</li>
+        <li><strong>The warm, plain voice:</strong> "a friendly bunch", "the hallway track".</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <div class="label">Fix</div>
+      <h3 class="mt1">Three sites, three palettes</h3>
+      <table class="mt2">
+        <tr><th>Site</th><th>Accent</th><th>Neutral</th></tr>
+        <tr><td>techmids.org</td><td><span class="chip" style="background:#EAB308"></span><span class="mono">#EAB308</span></td><td><span class="chip" style="background:#18181B"></span>zinc</td></tr>
+        <tr><td>conf</td><td><span class="chip" style="background:#FFFF00"></span><span class="mono">#FFFF00</span></td><td><span class="chip" style="background:#111827"></span>gray + indigo glow</td></tr>
+        <tr><td>events</td><td><span class="chip" style="background:#FFEE58"></span><span class="mono">#FFEE58</span></td><td><span class="chip" style="background:#334155"></span>slate</td></tr>
+      </table>
+      <p class="mt2" style="font-size:11.5px">The main site has no logo at all, and uses a mustard that isn't the brand yellow. Blue-tinted greys fight the yellow and make it look green.</p>
+    </div>
+    <div class="panel">
+      <div class="label">Add</div>
+      <h3 class="mt1">Rules, tokens, a point of view</h3>
+      <ul class="clean mt2">
+        <li><strong>A warm neutral ramp</strong> so yellow stays yellow.</li>
+        <li><strong>A real light mode.</strong> Yellow text on white fails; the guide says what to do instead.</li>
+        <li><strong>A type system</strong> with a display face that has some character, plus mono for data.</li>
+        <li><strong>One token file</strong> that both sites and the component library read from.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 03 IDEA -->
+<section id="idea" class="page">
+  <div class="eyebrow"><span class="n">02</span>/idea</div>
+  <h2>Hi-vis for the people who build things.</h2>
+  <div class="grid mt3" style="grid-template-columns:1.05fr 1fr;gap:40px">
+    <div>
+      <p style="font-size:15.5px;line-height:1.55;color:var(--tm-text)">The Midlands makes things. TechMids yellow is the yellow of a site jacket, a floor marking, a "mind the step" sign: practical, visible, slightly cheeky. That is the brand. It reads as <span class="hl">built by engineers</span> because it behaves like a well-kept codebase: few parts, clearly named, used consistently.</p>
+      <p class="mt2">"Developery" here means <strong>precise and legible</strong>, not costume. No fake terminals, no green rain, no curly-brace puns, no circuit boards. The developer signal comes from three quiet habits:</p>
+      <ul class="clean mt2">
+        <li><strong>Things are labelled.</strong> Small mono captions, like a spec sheet or a well-named variable.</li>
+        <li><strong>Things have addresses.</strong> Sections are routes: <code>/conf/2026/schedule</code>.</li>
+        <li><strong>The grid shows.</strong> Faint construction lines and corner ticks, like an inspector overlay left on.</li>
+      </ul>
+    </div>
+    <div class="grid g2" style="gap:14px;align-content:start">
+      <div class="panel"><div class="label">Principle 1</div><h3 class="mt1">Loud, then quiet</h3><p class="mt1" style="font-size:11.5px">One yellow thing per view does the shouting. Everything else is ink, paper and good type.</p></div>
+      <div class="panel"><div class="label">Principle 2</div><h3 class="mt1">Community first</h3><p class="mt1" style="font-size:11.5px">Photos of real people at real events. The meetups' own logos get space. We are the frame, not the picture.</p></div>
+      <div class="panel"><div class="label">Principle 3</div><h3 class="mt1">Plain and useful</h3><p class="mt1" style="font-size:11.5px">Date, place, price, how to get in. Say it once, clearly, near the top.</p></div>
+      <div class="panel"><div class="label">Principle 4</div><h3 class="mt1">Everyone gets in</h3><p class="mt1" style="font-size:11.5px">AA contrast minimum, visible focus, both colour modes treated as first class.</p></div>
+      <div class="panel" style="grid-column:1/-1;background:var(--signal-400);color:#0A0A0A;border-color:#0A0A0A">
+        <div class="label" style="color:#0A0A0A">The three brand devices</div>
+        <div style="display:flex;gap:26px;align-items:center;margin-top:12px">
+          <div style="display:flex;align-items:center;gap:9px"><div style="width:30px;height:30px;background:#0A0A0A"></div><b>The Block</b></div>
+          <div style="display:flex;align-items:center;gap:9px"><div style="width:30px;height:30px;background:#0A0A0A;transform:skewX(-9deg)"></div><b>The Slant</b> <span class="mono" style="font-size:9px">9°</span></div>
+          <div style="display:flex;align-items:center;gap:9px"><div style="width:38px;height:22px;background:#0A0A0A;transform:rotate(5deg)"></div><b>The Tag</b> <span class="mono" style="font-size:9px">5°</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 LOGO -->
+<section id="logo" class="page">
+  <div class="eyebrow"><span class="n">03</span>/logo</div>
+  <h2>One wordmark, one block, any number of tags.</h2>
+  <div class="grid mt3" style="grid-template-columns:1fr 1fr 1.25fr;gap:20px">
+    <div>
+      <div class="panel" style="height:230px;display:grid;place-items:center"><svg class="wm" viewBox="0 0 295.32 152.71" style="width:62%"><use href="#wm"/></svg></div>
+      <h3 class="mt2">Wordmark</h3>
+      <p class="cap">The existing artwork, unchanged. Use in nav bars, footers and anywhere small. <span class="only-light">Ink on light.</span><span class="only-dark">Signal yellow on dark.</span></p>
+    </div>
+    <div>
+      <div class="panel" style="height:230px;display:grid;place-items:center"><div class="block" style="width:150px"><svg viewBox="0 0 295.32 152.71"><use href="#wm"/></svg></div></div>
+      <h3 class="mt2">Block</h3>
+      <p class="cap">The primary logo. A square of Signal with the wordmark in Ink at 72% width. Works on any background, in both modes, with no variants needed.</p>
+    </div>
+    <div>
+      <div class="panel" style="height:230px;display:grid;place-items:center;padding-right:60px"><div class="lockup"><div class="block" style="width:150px"><svg viewBox="0 0 295.32 152.71"><use href="#wm"/></svg></div><span class="tag" style="font-size:15px;outline:1px solid var(--graphite-800)">Conf<br><span style="font-weight:400">2026</span></span></div></div>
+      <h3 class="mt2">Block + Tag</h3>
+      <p class="cap">For sub-brands and editions. The tag overlaps the bottom right corner, rotated 5° clockwise. Text is Martian Mono, uppercase, 600 weight; a second line (year, city) drops to 400.</p>
+    </div>
+  </div>
+  <div class="grid mt3" style="grid-template-columns:auto 1fr;gap:28px;align-items:center">
+    <div class="label" style="width:120px">Tag family<br>(sample set)</div>
+    <div style="display:flex;gap:34px;align-items:center;padding:6px 0 0 6px">
+      <span class="tag" style="font-size:12px">Conf<br><span style="font-weight:400">2026</span></span>
+      <span class="tag" style="font-size:12px">Events</span>
+      <span class="tag" style="font-size:12px">Meetups</span>
+      <span class="tag" style="font-size:12px">Speakers</span>
+      <span class="tag" style="font-size:12px">Volunteers</span>
+      <span class="tag" style="font-size:12px">Sponsors</span>
+      <p style="font-size:11px;max-width:230px;margin-left:10px"><strong>One proposed change:</strong> today's tags are outlined Montserrat italic. Moving to live mono text makes a new tag a one-line change and ties the logo to the label system.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 LOGO USAGE -->
+<section id="logo-usage" class="page">
+  <div class="eyebrow"><span class="n">04</span>/logo/usage</div>
+  <h2>Give it room. Leave it alone.</h2>
+  <div class="grid mt3" style="grid-template-columns:1fr 1.5fr;gap:32px">
+    <div>
+      <div class="panel bggrid" style="height:250px;display:grid;place-items:center;background-size:25px 25px;background-color:var(--tm-surface)">
+        <div style="position:relative;padding:25px;border:1px dashed var(--tm-danger)">
+          <div class="block" style="width:125px"><svg viewBox="0 0 295.32 152.71"><use href="#wm"/></svg></div>
+          <span class="mono" style="position:absolute;top:5px;left:50%;transform:translateX(-50%);font-size:8px;color:var(--tm-danger);background:var(--tm-surface);padding:0 3px">x</span>
+          <span class="mono" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:8px;color:var(--tm-danger);background:var(--tm-surface);padding:0 3px">x</span>
+        </div>
+      </div>
+      <table class="mt2">
+        <tr><td>Clear space</td><td><strong>x</strong> = 1/5 of the block's width, on all sides</td></tr>
+        <tr><td>Min size, block</td><td class="mono">48px · 14mm</td></tr>
+        <tr><td>Min size, wordmark</td><td class="mono">64px wide · 18mm</td></tr>
+        <tr><td>Favicon</td><td>Block cropped to "TM" is not allowed. Use the full block; below 32px use a plain Signal square.</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="label">On backgrounds</div>
+      <div class="grid g4 mt1" style="gap:10px">
+        <div style="background:#F7F6F1;border:1px solid var(--tm-border);border-radius:8px;height:86px;display:grid;place-items:center"><div class="block" style="width:50px"><svg viewBox="0 0 295.32 152.71"><use href="#wm"/></svg></div></div>
+        <div style="background:#0A0A0A;border:1px solid var(--tm-border);border-radius:8px;height:86px;display:grid;place-items:center"><div class="block" style="width:50px"><svg viewBox="0 0 295.32 152.71"><use href="#wm"/></svg></div></div>
+        <div style="background:#0A0A0A;border:1px solid var(--tm-border);border-radius:8px;height:86px;display:grid;place-items:center;color:#FFFF00"><svg viewBox="0 0 295.32 152.71" style="width:70px"><use href="#wm"/></svg></div>
+        <div style="background:#FFFF00;border:1px solid var(--tm-border);border-radius:8px;height:86px;display:grid;place-items:center;color:#0A0A0A"><svg viewBox="0 0 295.32 152.71" style="width:70px"><use href="#wm"/></svg></div>
+      </div>
+      <p class="cap">Block on anything. Wordmark alone: Signal on Ink, or Ink on Signal or Paper. On photos, always use the block.</p>
+      <div class="label mt3">Don't</div>
+      <div class="grid g4 mt1" style="gap:10px">
+        <div><div class="mis" style="background:#F7F6F1;color:#FFFF00"><svg viewBox="0 0 295.32 152.71" style="width:76px"><use href="#wm"/></svg></div><p class="cap">Yellow wordmark on a light background</p></div>
+        <div><div class="mis" style="color:#3E74F2"><svg viewBox="0 0 295.32 152.71" style="width:76px"><use href="#wm"/></svg></div><p class="cap">Recolour it, or add gradients and glows</p></div>
+        <div><div class="mis" style="color:var(--tm-text)"><svg viewBox="0 0 295.32 152.71" preserveAspectRatio="none" style="width:104px;height:34px"><use href="#wm"/></svg></div><p class="cap">Stretch, re-slant or re-typeset</p></div>
+        <div><div class="mis"><div class="block" style="width:56px;border-radius:14px"><svg viewBox="0 0 295.32 152.71"><use href="#wm"/></svg></div></div><p class="cap">Round the block's corners. It is a square.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 COLOUR PALETTE -->
+<section id="colour" class="page">
+  <div class="eyebrow"><span class="n">05</span>/colour</div>
+  <h2>Signal, Ink, Paper. Then a little Brick, Canal and Leaf.</h2>
+  <div class="grid mt3" style="grid-template-columns:1.6fr 1fr 1fr 1fr 1fr 1fr;gap:10px">
+    <div class="sw" style="background:#FFFF00;color:#0A0A0A;height:150px;border-color:#0A0A0A"><b>Signal</b>#FFFF00<br>rgb 255 255 0<br>The brand. Fills, highlights, focus.</div>
+    <div class="sw" style="background:#0A0A0A;color:#F2F1EC;height:150px;border-color:#2E2E2B"><b>Ink</b>#0A0A0A<br>Text on light, logo, tags</div>
+    <div class="sw" style="background:#111111;color:#F2F1EC;height:150px;border-color:#2E2E2B"><b>Night</b>#111111<br>Dark mode page</div>
+    <div class="sw" style="background:#1E1E1E;color:#F2F1EC;height:150px;border-color:#2E2E2B"><b>Coal</b>#1E1E1E<br>Dark mode raised</div>
+    <div class="sw" style="background:#F7F6F1;color:#0A0A0A;height:150px;border-color:#DEDCD4"><b>Paper</b>#F7F6F1<br>Light mode page</div>
+    <div class="sw" style="background:#FFFFFF;color:#0A0A0A;height:150px;border-color:#DEDCD4"><b>White</b>#FFFFFF<br>Light mode raised</div>
+  </div>
+  <p class="cap">Night and Coal are already in the conf site's Tailwind config and carry over. Paper is new: a faintly warm off-white that sits better beside pure yellow than #FFF.</p>
+  <div class="grid mt2" style="grid-template-columns:1fr 1fr;gap:28px">
+    <div>
+      <div class="label">Signal ramp</div>
+      <div class="ramp mt1">
+        <div style="background:#FFFFE0;color:#0A0A0A">50</div><div style="background:#FFFFB0;color:#0A0A0A">100</div><div style="background:#FFFF70;color:#0A0A0A">200</div><div style="background:#FFFF3D;color:#0A0A0A">300</div><div style="background:#FFFF00;color:#0A0A0A"><b>400</b></div><div style="background:#E5E200;color:#0A0A0A">500</div><div style="background:#B8B400;color:#0A0A0A">600</div><div style="background:#8A8600;color:#fff">700</div><div style="background:#6E6A00;color:#fff">800</div><div style="background:#4A4700;color:#fff">900</div>
+      </div>
+      <div class="label mt2">Graphite ramp (warm neutral, replaces zinc / gray / slate)</div>
+      <div class="ramp mt1">
+        <div style="background:#F7F6F1;color:#0A0A0A">50</div><div style="background:#EEEDE7;color:#0A0A0A">100</div><div style="background:#DEDCD4;color:#0A0A0A">200</div><div style="background:#C2C0B7;color:#0A0A0A">300</div><div style="background:#A3A29B;color:#0A0A0A">400</div><div style="background:#8F8D85;color:#0A0A0A">500</div><div style="background:#6B6A64;color:#fff">600</div><div style="background:#55544E;color:#fff">700</div><div style="background:#2E2E2B;color:#fff">800</div><div style="background:#1E1E1E;color:#fff">850</div><div style="background:#111111;color:#fff">925</div><div style="background:#0A0A0A;color:#fff">950</div>
+      </div>
+    </div>
+    <div>
+      <div class="label">Supporting accents · status, charts, track colours. Never the hero.</div>
+      <div class="grid g3 mt1" style="gap:10px">
+        <div><div class="ramp"><div style="background:#FF7A5C;color:#0A0A0A">300</div><div style="background:#D8452E;color:#fff">500</div><div style="background:#B93A26;color:#fff">600</div></div><p class="cap"><strong>Brick</strong> · errors, sold out, track A. The red of Birmingham terracotta.</p></div>
+        <div><div class="ramp"><div style="background:#7EA6FF;color:#0A0A0A">300</div><div style="background:#3E74F2;color:#fff">500</div><div style="background:#2E62E6;color:#fff">600</div></div><p class="cap"><strong>Canal</strong> · info, links in charts, track B.</p></div>
+        <div><div class="ramp"><div style="background:#4CC38A;color:#0A0A0A">300</div><div style="background:#2A9A65;color:#fff">500</div><div style="background:#1F7A4D;color:#fff">600</div></div><p class="cap"><strong>Leaf</strong> · success, on sale, track C.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 COLOUR USAGE -->
+<section id="colour-usage" class="page">
+  <div class="eyebrow"><span class="n">06</span>/colour/usage</div>
+  <h2><span class="only-light">In light mode, yellow is a fill, never a text colour.</span><span class="only-dark">In dark mode, yellow can speak. Keep it to one voice.</span></h2>
+  <div class="grid mt3" style="grid-template-columns:1.15fr 1fr;gap:32px">
+    <div>
+      <div class="label">Semantic roles in this mode · contrast against <code>--tm-bg</code></div>
+      <table class="mt1 only-light">
+        <tr><th>Token</th><th>Value</th><th>Use</th><th>Ratio</th><th></th></tr>
+        <tr><td class="mono">--tm-bg</td><td><span class="chip" style="background:#F7F6F1"></span>Paper</td><td>Page</td><td></td><td></td></tr>
+        <tr><td class="mono">--tm-surface</td><td><span class="chip" style="background:#FFF"></span>White</td><td>Cards, inputs</td><td></td><td></td></tr>
+        <tr><td class="mono">--tm-text</td><td><span class="chip" style="background:#141414"></span>#141414</td><td>Body, headings</td><td class="mono">17.0</td><td><span class="pass">AAA</span></td></tr>
+        <tr><td class="mono">--tm-text-muted</td><td><span class="chip" style="background:#55544E"></span>Graphite 700</td><td>Secondary copy</td><td class="mono">7.0</td><td><span class="pass">AAA</span></td></tr>
+        <tr><td class="mono">--tm-accent</td><td><span class="chip" style="background:#FFFF00"></span>Signal 400</td><td>Fills, highlight, with Ink text</td><td class="mono">18.4*</td><td><span class="pass">AAA</span></td></tr>
+        <tr><td class="mono">--tm-accent-text</td><td><span class="chip" style="background:#6E6A00"></span>Signal 800</td><td>Dates, eyebrows</td><td class="mono">5.2</td><td><span class="pass">AA</span></td></tr>
+        <tr><td class="mono">--tm-info / success / danger</td><td><span class="chip" style="background:#2E62E6"></span><span class="chip" style="background:#1F7A4D"></span><span class="chip" style="background:#B93A26"></span></td><td>Status</td><td class="mono">4.8–5.3</td><td><span class="pass">AA</span></td></tr>
+        <tr><td>Signal as text on Paper</td><td><span class="chip" style="background:#FFFF00"></span></td><td>Not allowed</td><td class="mono">1.1</td><td><span class="fail">Fail</span></td></tr>
+      </table>
+      <table class="mt1 only-dark">
+        <tr><th>Token</th><th>Value</th><th>Use</th><th>Ratio</th><th></th></tr>
+        <tr><td class="mono">--tm-bg</td><td><span class="chip" style="background:#111"></span>Night</td><td>Page</td><td></td><td></td></tr>
+        <tr><td class="mono">--tm-surface</td><td><span class="chip" style="background:#181817"></span>Graphite 900</td><td>Cards, inputs</td><td></td><td></td></tr>
+        <tr><td class="mono">--tm-text</td><td><span class="chip" style="background:#F2F1EC"></span>#F2F1EC</td><td>Body, headings</td><td class="mono">17.1</td><td><span class="pass">AAA</span></td></tr>
+        <tr><td class="mono">--tm-text-muted</td><td><span class="chip" style="background:#A3A29B"></span>Graphite 400</td><td>Secondary copy</td><td class="mono">7.5</td><td><span class="pass">AAA</span></td></tr>
+        <tr><td class="mono">--tm-accent</td><td><span class="chip" style="background:#FFFF00"></span>Signal 400</td><td>Fills with Ink text; links; key numbers</td><td class="mono">18.0</td><td><span class="pass">AAA</span></td></tr>
+        <tr><td class="mono">--tm-info</td><td><span class="chip" style="background:#7EA6FF"></span>Canal 300</td><td>Status</td><td class="mono">8.1</td><td><span class="pass">AAA</span></td></tr>
+        <tr><td class="mono">--tm-success</td><td><span class="chip" style="background:#4CC38A"></span>Leaf 300</td><td>Status</td><td class="mono">8.7</td><td><span class="pass">AAA</span></td></tr>
+        <tr><td class="mono">--tm-danger</td><td><span class="chip" style="background:#FF7A5C"></span>Brick 300</td><td>Status</td><td class="mono">7.5</td><td><span class="pass">AAA</span></td></tr>
+      </table>
+      <p class="cap only-light">* Ink text on a Signal fill. Ratios are WCAG 2.1; AA needs 4.5 for body text.</p>
+      <p class="cap only-dark">Ratios are WCAG 2.1 against Night. AA needs 4.5 for body text, AAA needs 7.</p>
+    </div>
+    <div>
+      <div class="label">Proportion</div>
+      <div style="display:flex;height:54px;border-radius:8px;overflow:hidden;border:1px solid var(--tm-border);margin-top:8px;font-family:var(--font-mono);font-size:8.5px">
+        <div style="flex:70;background:var(--tm-bg);padding:7px">70% page</div><div style="flex:20;background:var(--tm-text);color:var(--tm-bg);padding:7px">20% text</div><div style="flex:8;background:#FFFF00;color:#0A0A0A;padding:7px">8%</div><div style="flex:2;background:var(--tm-danger)"></div>
+      </div>
+      <p class="cap">Yellow is the 8%. If a screen is half yellow, it is a poster, and that's fine, once.</p>
+      <div class="label mt3">Rules</div>
+      <ul class="clean mt1">
+        <li class="only-light"><strong>Yellow fills need an Ink edge</strong> on Paper or White: a 1px border, or Ink text sitting on top.</li>
+        <li class="only-light"><strong>Emphasis in running text is a highlight</strong>, <span class="hl">like this</span>, not yellow type.</li>
+        <li class="only-dark"><strong>Yellow text is for links, dates and one headline phrase.</strong> Body copy stays off-white.</li>
+        <li class="only-dark"><strong>No pure white.</strong> #F2F1EC on Night is easier on the eyes than #FFF on #000.</li>
+        <li><strong>Only Ink goes on yellow.</strong> Never white, grey or an accent.</li>
+        <li><strong>No blue-tinted greys.</strong> Graphite only. No decorative gradients or glow blobs.</li>
+        <li><strong>Accents carry meaning</strong> (status, track). Never use them as decoration.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 08 TYPE FAMILIES -->
+<section id="type" class="page">
+  <div class="eyebrow"><span class="n">07</span>/type</div>
+  <h2>Three typefaces, three jobs.</h2>
+  <div class="grid g3 mt3" style="gap:18px">
+    <div class="panel">
+      <div class="label">Display · headlines</div>
+      <div class="display" style="font-size:86px;margin:10px 0 4px;font-weight:800">Aa Gg</div>
+      <h3>Bricolage Grotesque</h3>
+      <p class="mt1" style="font-size:11.5px">A grotesque with a bit of a wonk: ink traps, uneven widths, real personality at large sizes. Replaces DM Sans. Weights 600 to 800, tracking -3%, line height 1.0 to 1.1.</p>
+      <div class="rule"></div>
+      <div class="display" style="font-size:26px">All day, full stack, Brum.</div>
+    </div>
+    <div class="panel">
+      <div class="label">Text · everything you read</div>
+      <div style="font-size:86px;margin:10px 0 4px;font-weight:600;letter-spacing:-.04em;line-height:1.02;font-family:var(--font-text)">Aa Gg</div>
+      <h3>Inter</h3>
+      <p class="mt1" style="font-size:11.5px">Already on the conf and events sites, so it stays. Body, UI, forms and long reads. Weights 400, 500, 600. Line height 1.6 for body, 1.25 for UI.</p>
+      <div class="rule"></div>
+      <div style="font-size:14px;color:var(--tm-text)">Hear from speakers from the local community and beyond, across three tracks.</div>
+    </div>
+    <div class="panel">
+      <div class="label">Mono · data and labels</div>
+      <div class="mono" style="font-size:70px;margin:16px 0 14px;font-weight:600;letter-spacing:-.04em;line-height:1.02">Aa 09</div>
+      <h3>Martian Mono</h3>
+      <p class="mt1" style="font-size:11.5px">Wide, sturdy, a little odd. Used small and uppercase for dates, times, prices, tags and labels. It is seasoning: never for paragraphs, never for headlines.</p>
+      <div class="rule"></div>
+      <div class="mono" style="font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--tm-text)">Fri 27 Nov · 09:00 · Track 2</div>
+    </div>
+  </div>
+  <div class="grid g3 mt2" style="gap:18px">
+    <p style="font-size:11px"><strong>Why not keep DM Sans?</strong> It is fine, and it is everywhere. Bricolage gives headlines a voice without touching the logo.</p>
+    <p style="font-size:11px"><strong>All three are open source</strong> (SIL OFL) and on Google Fonts as variable fonts. Self-host them with <code>font-display: swap</code>.</p>
+    <p style="font-size:11px"><strong>The slant belongs to the logo.</strong> Don't italicise headlines to match it. Italic is for titles of talks and for emphasis in body copy.</p>
+  </div>
+</section>
+
+<!-- 09 TYPE SCALE -->
+<section id="type-scale" class="page">
+  <div class="eyebrow"><span class="n">08</span>/type/scale</div>
+  <h2>A 1.25 scale from 11 to 96.</h2>
+  <div class="grid mt3" style="grid-template-columns:1.3fr 1fr;gap:36px">
+    <div>
+      <table>
+        <tr><th style="width:92px">Token</th><th style="width:70px">Size</th><th>Specimen</th></tr>
+        <tr><td class="mono">--text-6xl</td><td class="mono">76 / 1.0</td><td><span class="display" style="font-size:60px;color:var(--tm-text);font-weight:800;display:block;line-height:.95;white-space:nowrap">27 November</span></td></tr>
+        <tr><td class="mono">--text-4xl</td><td class="mono">49 / 1.05</td><td><span class="display" style="font-size:40px;color:var(--tm-text);white-space:nowrap">Tickets are on sale</span></td></tr>
+        <tr><td class="mono">--text-2xl</td><td class="mono">31 / 1.15</td><td><span class="display" style="font-size:27px;color:var(--tm-text);font-weight:600">Ready to take the stage?</span></td></tr>
+        <tr><td class="mono">--text-lg</td><td class="mono">20 / 1.25</td><td><span class="display" style="font-size:19px;color:var(--tm-text);font-weight:600;letter-spacing:-.015em">Card titles and section intros</span></td></tr>
+        <tr><td class="mono">--text-md</td><td class="mono">16 / 1.6</td><td><span style="font-size:15px;color:var(--tm-text)">Body copy. TechMids is an open community and anyone is welcome.</span></td></tr>
+        <tr><td class="mono">--text-sm</td><td class="mono">14 / 1.5</td><td><span style="font-size:13px">Secondary copy, captions, form help text.</span></td></tr>
+        <tr><td class="mono">--text-2xs</td><td class="mono">11 / 1.4</td><td><span class="mono" style="font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--tm-text)">Mono label · +8% tracking</span></td></tr>
+      </table>
+      <p class="cap">Sizes shown reduced to fit the page. Full scale in the tokens: 11, 12, 14, 16, 20, 25, 31, 39, 49, 61, 76, 96.</p>
+    </div>
+    <div>
+      <div class="label">A page in miniature</div>
+      <div class="panel ticks mt1" style="padding:24px">
+        <div class="eyebrow" style="font-size:8.5px"><span class="n">/conf/2026</span>Fri 27 Nov · Everyman, Mailbox</div>
+        <div class="display" style="font-size:38px;margin-top:10px;font-weight:800">Birmingham's <span class="only-light hl">community</span><span class="only-dark" style="color:var(--signal-400)">community</span> tech conference.</div>
+        <p style="font-size:13px;margin-top:10px;line-height:1.55">Three tracks, one cinema, and all your favourite meetups under one roof. Come for the talks, stay for the hallway track.</p>
+        <div style="display:flex;gap:10px;margin-top:16px;align-items:center"><span class="btn primary">Get a ticket <span class="arrow">→</span></span><span class="link" style="font-size:12.5px">See the schedule</span></div>
+      </div>
+      <ul class="clean mt2">
+        <li><strong>Sentence case everywhere.</strong> Uppercase only in mono labels.</li>
+        <li><strong>One display size per view</strong> does the heavy lifting; step down at least two sizes for the next level.</li>
+        <li><strong>Measure:</strong> 60 to 75 characters. <code>max-width: 40rem</code> for prose.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 10 GRAPHIC LANGUAGE -->
+<section id="graphic-language" class="page">
+  <div class="eyebrow"><span class="n">09</span>/graphic-language</div>
+  <h2>Block, slant, tag, and a visible grid.</h2>
+  <div class="grid g4 mt3" style="gap:16px">
+    <div>
+      <div class="panel" style="height:170px;position:relative;overflow:hidden;padding:0"><div style="position:absolute;left:18px;top:18px;width:92px;height:92px;background:#FFFF00;outline:1px solid #0A0A0A"></div><div class="display" style="position:absolute;left:28px;top:70px;font-size:36px;font-weight:800;color:var(--tm-text)"><span style="color:#0A0A0A">250</span><br>seats</div></div>
+      <h3 class="mt2">The Block</h3><p class="cap">A flat Signal square behind a number, a date or a face. Always square, always axis-aligned, one per view.</p>
+    </div>
+    <div>
+      <div class="panel" style="height:170px;display:flex;flex-direction:column;justify-content:center;gap:12px">
+        <div style="height:14px;width:70%;background:var(--tm-accent);transform:skewX(-9deg);outline:1px solid #0A0A0A"></div>
+        <div style="display:flex;gap:5px"><i style="width:9px;height:22px;background:var(--tm-text);transform:skewX(-9deg)"></i><i style="width:9px;height:22px;background:var(--tm-text);transform:skewX(-9deg)"></i><i style="width:9px;height:22px;background:var(--tm-text);transform:skewX(-9deg)"></i><i style="width:9px;height:22px;background:var(--tm-accent);transform:skewX(-9deg);outline:1px solid #0A0A0A"></i><i style="width:9px;height:22px;background:var(--tm-border);transform:skewX(-9deg)"></i><i style="width:9px;height:22px;background:var(--tm-border);transform:skewX(-9deg)"></i></div>
+        <div class="mono" style="font-size:8.5px;color:var(--tm-text-muted)">skewX(var(--angle-slant))</div>
+      </div>
+      <h3 class="mt2">The Slant</h3><p class="cap">9°, taken from the wordmark's stems. For dividers, progress, list bullets and section edges. Shapes slant; text doesn't.</p>
+    </div>
+    <div>
+      <div class="panel" style="height:170px;display:grid;place-items:center;position:relative;overflow:hidden;padding:0"><div class="photo" style="position:absolute;inset:0;border-radius:0;background-image:url(assets/img/bike.jpg)"></div><span class="tag" style="font-size:11px;position:absolute;left:14px;bottom:18px">Lightning talks</span></div>
+      <h3 class="mt2">The Tag</h3><p class="cap">A mono label rotated 5°. Pins a name onto a photo or a block. One tag per image; it always tilts the same way.</p>
+    </div>
+    <div>
+      <div class="panel bggrid ticks" style="height:170px;background-color:var(--tm-surface);background-size:21px 21px;position:relative;overflow:visible"><span class="mono" style="position:absolute;top:8px;left:10px;font-size:8px;color:var(--tm-text-muted)">12 col · 24 gutter</span><div style="position:absolute;left:42px;top:63px;width:126px;height:63px;border:1px dashed var(--tm-text);"></div><span class="mono" style="position:absolute;left:42px;top:132px;font-size:8px;color:var(--tm-text)">384 × 192</span></div>
+      <h3 class="mt2">The Grid</h3><p class="cap">Faint construction lines, corner ticks and dimension notes in hero areas and empty states. 1px, Graphite, never yellow.</p>
+    </div>
+  </div>
+  <div class="grid mt3" style="grid-template-columns:1fr 1fr 1fr 1.1fr;gap:16px">
+    <div class="photo" style="height:150px;background-image:url(assets/img/everyone.jpg)"></div>
+    <div class="photo" style="height:150px;background-image:url(assets/img/net.jpg)"></div>
+    <div class="photo" style="height:150px;background-image:url(assets/img/group.jpg)"></div>
+    <div><div class="label">Photography</div><ul class="clean mt1"><li><strong>Real events, real people,</strong> never stock.</li><li><strong>Full colour,</strong> natural light where possible. No yellow duotone or filters.</li><li><strong>Faces and hands:</strong> talking, laughing, building. Fewer empty rooms.</li><li><strong>Always with alt text</strong> and the photographer's credit.</li></ul></div>
+  </div>
+</section>
+
+<!-- 11 COMPONENTS 1 -->
+<section id="components" class="page">
+  <div class="eyebrow"><span class="n">10</span>/components/primitives</div>
+  <h2>Buttons, tags, links and fields.</h2>
+  <div class="grid mt3" style="grid-template-columns:1.2fr 1fr;gap:28px">
+    <div>
+      <div class="panel">
+        <div class="label">Button</div>
+        <table class="mt1">
+          <tr><th></th><th>Default</th><th>Hover</th><th>Focus</th><th>Disabled</th></tr>
+          <tr><td>Primary</td><td><span class="btn primary">Get a ticket <span class="arrow">→</span></span></td><td><span class="btn primary hover">Get a ticket <span class="arrow">→</span></span></td><td><span class="btn primary focus">Get a ticket</span></td><td><span class="btn disabled">Sold out</span></td></tr>
+          <tr><td>Secondary</td><td><span class="btn secondary">Submit a talk</span></td><td colspan="3" style="font-size:11px">Inverse fill. For the second most important action.</td></tr>
+          <tr><td>Ghost</td><td><span class="btn ghost">View schedule</span></td><td><span class="btn ghost sm">Small</span></td><td colspan="2" style="font-size:11px">Outline. Tertiary and repeated actions.</td></tr>
+        </table>
+        <p class="cap">Radius 6px, Inter 600. <strong>One primary button per view.</strong> Hover lifts 1px with a hard 3px offset shadow, no blur, no colour fade. Labels are verbs: "Get a ticket", not "Tickets".</p>
+      </div>
+      <div class="panel mt2">
+        <div class="label">Badge · mono, 2px radius, square on purpose</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+          <span class="badge solid">Conf</span><span class="badge">Meetup</span><span class="badge">Workshop</span><span class="badge">Free</span><span class="badge ok"><i></i>On sale</span><span class="badge bad"><i></i>Sold out</span><span class="badge info"><i></i>CFP open</span><span class="badge">Track 2</span>
+        </div>
+        <p class="cap">Status badges pair colour with a dot and a word, so they never rely on colour alone.</p>
+      </div>
+    </div>
+    <div>
+      <div class="panel">
+        <div class="label">Text field</div>
+        <div class="grid g2 mt1" style="gap:12px">
+          <label class="field"><span>Email address</span><div class="input">you@example.com</div></label>
+          <label class="field"><span>Email address</span><div class="input focus">ada@brum.dev</div></label>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:12px;align-items:flex-end">
+          <label class="field" style="flex:1"><span>Stay up to date</span><div class="input">Email address</div></label><span class="btn primary">Join</span>
+        </div>
+        <p class="cap">Always a visible label above. Placeholder is an example, never the label. Errors go below in <span style="color:var(--tm-danger);font-weight:600">Brick</span> with a plain sentence.</p>
+      </div>
+      <div class="panel mt2">
+        <div class="label">Link and focus</div>
+        <p style="font-size:13.5px;color:var(--tm-text);margin-top:8px">Run a meetup? <span class="link">Get in touch</span> and we'll add it to the calendar.</p>
+        <p class="cap"><span class="only-light">Links are Ink with a 2px yellow underline.</span><span class="only-dark">Links are Signal with a soft underline.</span> Focus is a 2px ring with a yellow halo, on every interactive element. Never remove it.</p>
+        <div class="rule"></div>
+        <div class="label">Theme toggle</div>
+        <div style="margin-top:8px"><span class="toggle"><span class="only-light on">Light</span><span class="only-dark">Light</span><span class="only-light">Dark</span><span class="only-dark on">Dark</span><span>Auto</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 COMPONENTS 2 -->
+<section id="patterns" class="page">
+  <div class="eyebrow"><span class="n">11</span>/components/patterns</div>
+  <h2>The patterns both sites share.</h2>
+  <div class="navbar mt3">
+    <svg class="wm" viewBox="0 0 295.32 152.71" style="height:26px;width:auto"><use href="#wm"/></svg>
+    <nav><b>Events</b><span>Conf</span><span>Meetups</span><span>Blog</span><span>About</span></nav>
+    <div style="display:flex;gap:10px;align-items:center"><span class="toggle"><span class="only-light on">Light</span><span class="only-dark">Light</span><span class="only-light">Dark</span><span class="only-dark on">Dark</span></span><span class="btn primary sm">Get a ticket</span></div>
+  </div>
+  <div class="grid mt2" style="grid-template-columns:1fr 1fr 1.35fr;gap:16px">
+    <div class="card">
+      <div class="photo" style="height:104px;border-radius:0;background-image:url(assets/img/full.jpg);position:relative"><span class="tag" style="font-size:8.5px;position:absolute;left:12px;bottom:10px">Conf</span></div>
+      <div class="body"><div class="date">Fri 27 Nov 2026 · 09:00</div><h4>TechMids Conf 2026</h4><div class="meta">Everyman Cinema, Mailbox, Birmingham</div><div style="display:flex;gap:6px;margin-top:10px"><span class="badge ok"><i></i>On sale</span><span class="badge">3 tracks</span></div></div>
+    </div>
+    <div class="card">
+      <div style="height:104px;background:var(--signal-400);position:relative;color:#0A0A0A;padding:12px;border-bottom:1px solid var(--tm-border)"><div class="display" style="font-size:52px;font-weight:800;line-height:.9">03<span class="mono" style="font-size:11px;letter-spacing:.06em;font-weight:600;margin-left:6px">DEC</span></div><div class="mono" style="font-size:8.5px;position:absolute;bottom:10px;left:12px;text-transform:uppercase;letter-spacing:.06em">Thu · 18:30</div></div>
+      <div class="body"><div class="date">Meetup · sample</div><h4>BrumJS: December social</h4><div class="meta">Venue to be confirmed, Birmingham</div><div style="display:flex;gap:6px;margin-top:10px"><span class="badge">Free</span><span class="badge">JavaScript</span></div></div>
+    </div>
+    <div class="panel" style="padding:14px 18px">
+      <div class="label">Schedule row · sample content</div>
+      <div class="row"><span class="t">09:00</span><div><div class="ti">Doors, coffee, lanyards</div><div class="sp">Foyer</div></div><span class="badge">All</span></div>
+      <div class="row"><span class="t">09:45</span><div><div class="ti">Opening keynote</div><div class="sp">Speaker name · Screen 1</div></div><span class="badge solid">Keynote</span></div>
+      <div class="row"><span class="t">10:30</span><div><div class="ti"><em>Talk title goes here in italics</em></div><div class="sp">Speaker name · Screen 2</div></div><span class="badge">Track 2</span></div>
+      <div class="row" style="border:0"><span class="t">12:30</span><div><div class="ti">Lunch and the hallway track</div><div class="sp">Foyer</div></div><span class="badge">All</span></div>
+    </div>
+  </div>
+  <div class="grid mt2" style="grid-template-columns:.62fr .62fr 1fr 1.1fr;gap:16px">
+    <div><div class="avatar"></div><div style="font-weight:600;color:var(--tm-text);margin-top:8px;font-size:12.5px">Speaker name</div><div class="meta">Role, Company</div></div>
+    <div><div class="avatar" style="box-shadow:6px 6px 0 var(--signal-400);outline:1px solid var(--graphite-950)"></div><div style="font-weight:600;color:var(--tm-text);margin-top:10px;font-size:12.5px">Keynote speaker</div><div class="meta">Block shadow = featured</div></div>
+    <div class="panel"><div class="label">Sponsor tier</div><div class="display" style="font-size:22px;margin-top:6px">Gold</div><div class="grid g2 mt1" style="gap:8px"><div style="height:36px;background:#FFF;border:1px solid var(--tm-border);border-radius:6px"></div><div style="height:36px;background:#FFF;border:1px solid var(--tm-border);border-radius:6px"></div></div><p class="cap">Sponsor logos always sit on white tiles, in both modes, so nobody's logo needs a dark variant.</p></div>
+    <div class="panel" style="background:var(--graphite-950);color:#F2F1EC;border-color:var(--graphite-800)"><div class="label" style="color:#A3A29B">Call to action band</div><div class="display" style="font-size:25px;margin-top:6px">Ready to take <span style="background:#FFFF00;color:#0A0A0A;padding:0 .12em">the stage?</span></div><p style="color:#A3A29B;font-size:11.5px;margin-top:6px">The CFP is open. First-time speakers very welcome.</p><span class="btn primary sm" style="margin-top:10px;border-color:#FFFF00">Submit a talk <span class="arrow">→</span></span></div>
+  </div>
+</section>
+
+<!-- 13 LAYOUT -->
+<section id="layout" class="page">
+  <div class="eyebrow"><span class="n">12</span>/layout</div>
+  <h2>How it comes together on a page.</h2>
+  <div class="grid mt3" style="grid-template-columns:1.9fr 1fr;gap:28px">
+    <div class="ticks" style="border:1px solid var(--tm-border);border-radius:10px;overflow:hidden;background:var(--tm-bg)">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid var(--tm-border)"><svg class="wm" viewBox="0 0 295.32 152.71" style="height:20px;width:auto"><use href="#wm"/></svg><div style="display:flex;gap:14px;font-size:10px;color:var(--tm-text-muted);align-items:center"><span>Schedule</span><span>Speakers</span><span>Sponsors</span><span class="btn primary sm" style="font-size:9.5px;padding:4px 8px">Get a ticket</span></div></div>
+      <div class="bggrid layout-hero" style="display:grid;grid-template-columns:1.1fr 1fr;gap:20px;padding:26px 22px 22px;background-size:44px 44px">
+        <div>
+          <div class="eyebrow" style="font-size:8px"><span class="n">/conf/2026</span>Fri 27 Nov · Birmingham</div>
+          <div class="display" style="font-size:44px;margin-top:10px;font-weight:800">All day.<br>Full stack.<br><span class="hl">All Brum.</span></div>
+          <p style="font-size:11.5px;margin-top:10px;max-width:270px">Three tracks at the Everyman, Mailbox, made up of all your favourite meetups.</p>
+          <div style="display:flex;gap:8px;margin-top:14px"><span class="btn primary sm">Get a ticket <span class="arrow">→</span></span><span class="btn ghost sm">Schedule</span></div>
+        </div>
+        <div style="position:relative;padding:0 14px 14px 0"><div style="position:absolute;right:0;bottom:0;width:70%;height:70%;background:#FFFF00;outline:1px solid #0A0A0A"></div><div class="photo" style="height:200px;background-image:url(assets/img/hero.jpg);position:relative;border-radius:0;outline:1px solid var(--graphite-950)"></div><span class="tag" style="font-size:9px;position:absolute;left:-10px;bottom:28px;outline:1px solid var(--graphite-800)">Conf<br><span style="font-weight:400">2026</span></span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--tm-border)">
+        <div style="padding:12px 22px;border-right:1px solid var(--tm-border)"><div class="label">Spaces</div><div class="display" style="font-size:17px;margin-top:2px">250 seats</div></div>
+        <div style="padding:12px 22px;border-right:1px solid var(--tm-border)"><div class="label">Venue</div><div class="display" style="font-size:17px;margin-top:2px">Everyman Cinema</div></div>
+        <div style="padding:12px 22px"><div class="label">Location</div><div class="display" style="font-size:17px;margin-top:2px">Mailbox, Birmingham</div></div>
+      </div>
+    </div>
+    <div>
+      <table>
+        <tr><th>Token</th><th>Value</th></tr>
+        <tr><td>Container</td><td class="mono">76rem · 40rem prose</td></tr>
+        <tr><td>Grid</td><td class="mono">12 col · 24px gutter</td></tr>
+        <tr><td>Space</td><td class="mono">4 8 12 16 24 32 48 64 96 128</td></tr>
+        <tr><td>Radius</td><td class="mono">2 tag · 6 control · 10 card · 16 media</td></tr>
+        <tr><td>Border</td><td class="mono">1px, always</td></tr>
+        <tr><td>Motion</td><td class="mono">120 / 200ms ease-out</td></tr>
+      </table>
+      <ul class="clean mt2">
+        <li><strong>Borders over shadows.</strong> Depth comes from 1px lines and the occasional hard offset block.</li>
+        <li><strong>Radii come down</strong> from today's 16 to 32px. Tighter corners suit the block.</li>
+        <li><strong>Left-aligned by default.</strong> Centre only short, single-line statements.</li>
+        <li><strong>Motion is small and quick,</strong> and off when <code>prefers-reduced-motion</code> is set.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 14 VOICE -->
+<section id="voice" class="page">
+  <div class="eyebrow"><span class="n">13</span>/voice</div>
+  <h2>Sound like the organiser who saved you a seat.</h2>
+  <div class="grid mt3" style="grid-template-columns:1fr 1.5fr;gap:36px">
+    <div>
+      <div class="grid" style="gap:12px">
+        <div><h3>Friendly, not zany</h3><p style="font-size:11.5px" class="mt1">Warm and a bit dry. "A friendly bunch" is the register. One joke per page, maximum.</p></div>
+        <div><h3>Plain, not corporate</h3><p style="font-size:11.5px" class="mt1">Short words, short sentences, British spelling. If you wouldn't say it at the pub after a meetup, rewrite it.</p></div>
+        <div><h3>Specific, not hyped</h3><p style="font-size:11.5px" class="mt1">Numbers, names and places beat adjectives. "250 seats, 3 tracks" beats "an incredible experience".</p></div>
+        <div><h3>Open, not cliquey</h3><p style="font-size:11.5px" class="mt1">Assume the reader is new. Explain in-jokes and acronyms. Say who it's for and what it costs.</p></div>
+        <div><h3>Proudly local</h3><p style="font-size:11.5px" class="mt1">Birmingham and the Midlands by name. "Brum" is welcome in headlines; forced dialect is not.</p></div>
+      </div>
+    </div>
+    <div>
+      <div class="grid g2" style="gap:14px 20px">
+        <div class="do"><div class="label">Say</div><p>Three tracks, 250 seats, one cinema. Friday 27 November.</p></div>
+        <div class="dont"><div class="label">Not</div><p>Join us for an unmissable, world-class celebration of innovation!</p></div>
+        <div class="do"><div class="label">Say</div><p>Never given a talk before? Good. We'd love to hear from you.</p></div>
+        <div class="dont"><div class="label">Not</div><p>We are seeking submissions from thought leaders and industry experts.</p></div>
+        <div class="do"><div class="label">Say</div><p>We're sold out. Join the waiting list and we'll email if a seat frees up.</p></div>
+        <div class="dont"><div class="label">Not</div><p>Error 418: tickets not found ¯\_(ツ)_/¯</p></div>
+        <div class="do"><div class="label">Say</div><p>TechMids is run by volunteers and is not for profit. Ticket money pays for the venue, the food and the AV.</p></div>
+        <div class="dont"><div class="label">Not</div><p>Leveraging synergies across the regional tech ecosystem.</p></div>
+      </div>
+      <div class="rule" style="margin-top:20px"></div>
+      <div class="grid g3" style="gap:20px">
+        <div><div class="label">Naming</div><p style="font-size:11px" class="mt1"><strong>TechMids</strong>, one word, capital T and M. <strong>TechMids Conf 2026</strong>. Not "Tech Mids", "Techmids" or "TMC".</p></div>
+        <div><div class="label">Dates and times</div><p style="font-size:11px" class="mt1"><strong>Fri 27 Nov 2026 · 09:00</strong> in labels. "Friday 27 November" in prose. 24-hour clock.</p></div>
+        <div><div class="label">Developer humour</div><p style="font-size:11px" class="mt1">Leave code jokes to the speakers. No <code>&lt;h1&gt;</code> tags in headlines, no "404: fun not found".</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 TOKENS -->
+<section id="tokens" class="page">
+  <div class="eyebrow"><span class="n">14</span>/tokens</div>
+  <h2>One file feeds both sites and the component library.</h2>
+  <div class="grid mt3" style="grid-template-columns:1fr 1fr 1fr;gap:16px">
+<pre><span class="c">/* techmids-tokens.css · primitives */</span>
+<span class="k">:root</span> {
+  <span class="v">--signal-400</span>: #FFFF00;
+  <span class="v">--signal-500</span>: #E5E200;
+  <span class="v">--signal-800</span>: #6E6A00;
+  <span class="v">--graphite-50</span>:  #F7F6F1; <span class="c">/* Paper */</span>
+  <span class="v">--graphite-200</span>: #DEDCD4;
+  <span class="v">--graphite-400</span>: #A3A29B;
+  <span class="v">--graphite-700</span>: #55544E;
+  <span class="v">--graphite-850</span>: #1E1E1E; <span class="c">/* Coal */</span>
+  <span class="v">--graphite-925</span>: #111111; <span class="c">/* Night */</span>
+  <span class="v">--graphite-950</span>: #0A0A0A; <span class="c">/* Ink */</span>
+  <span class="v">--brick-600</span>: #B93A26;
+  <span class="v">--canal-600</span>: #2E62E6;
+  <span class="v">--leaf-600</span>:  #1F7A4D;
+
+  <span class="v">--font-display</span>: "Bricolage Grotesque";
+  <span class="v">--font-text</span>:    "Inter";
+  <span class="v">--font-mono</span>:    "Martian Mono";
+
+  <span class="v">--radius-xs</span>: 2px;  <span class="v">--radius-sm</span>: 6px;
+  <span class="v">--radius-md</span>: 10px; <span class="v">--radius-lg</span>: 16px;
+  <span class="v">--angle-slant</span>: -9deg;
+  <span class="v">--angle-tag</span>: 5deg;
+}</pre>
+<pre><span class="c">/* semantic · light (default) */</span>
+<span class="k">:root, [data-theme="light"]</span> {
+  <span class="v">--tm-bg</span>:          var(--graphite-50);
+  <span class="v">--tm-surface</span>:     #FFFFFF;
+  <span class="v">--tm-border</span>:      var(--graphite-200);
+  <span class="v">--tm-text</span>:        #141414;
+  <span class="v">--tm-text-muted</span>:  var(--graphite-700);
+  <span class="v">--tm-accent</span>:      var(--signal-400);
+  <span class="v">--tm-on-accent</span>:   var(--graphite-950);
+  <span class="v">--tm-accent-text</span>: var(--signal-800);
+  <span class="v">--tm-link</span>:        var(--tm-text);
+  <span class="v">--tm-focus</span>:       var(--graphite-950);
+  <span class="v">--tm-logo</span>:        var(--graphite-950);
+}
+
+<span class="c">/* semantic · dark */</span>
+<span class="k">[data-theme="dark"]</span> {
+  <span class="v">--tm-bg</span>:          var(--graphite-925);
+  <span class="v">--tm-surface</span>:     #181817;
+  <span class="v">--tm-border</span>:      #2E2E2B;
+  <span class="v">--tm-text</span>:        #F2F1EC;
+  <span class="v">--tm-text-muted</span>:  var(--graphite-400);
+  <span class="v">--tm-accent-text</span>: var(--signal-400);
+  <span class="v">--tm-link</span>:        var(--signal-400);
+  <span class="v">--tm-focus</span>:       var(--signal-400);
+  <span class="v">--tm-logo</span>:        var(--signal-400);
+}</pre>
+    <div>
+<pre><span class="c">// tailwind.config.js (both repos)</span>
+<span class="k">theme</span>: { <span class="k">extend</span>: {
+  <span class="k">colors</span>: {
+    bg:      'var(--tm-bg)',
+    surface: 'var(--tm-surface)',
+    line:    'var(--tm-border)',
+    fg:      'var(--tm-text)',
+    muted:   'var(--tm-text-muted)',
+    accent:  'var(--tm-accent)',
+    'on-accent': 'var(--tm-on-accent)',
+  },
+  <span class="k">fontFamily</span>: {
+    display: 'var(--font-display)',
+    sans:    'var(--font-text)',
+    mono:    'var(--font-mono)',
+  },
+}}</pre>
+      <ul class="clean mt2">
+        <li><strong>Components read semantic tokens only.</strong> No hex values and no <code>dark:</code> pairs in component code.</li>
+        <li><strong>Theme switch</strong> is <code>data-theme</code> on <code>&lt;html&gt;</code>, falling back to <code>prefers-color-scheme</code>.</li>
+        <li><strong>The full file</strong> ships alongside this guide as <code>techmids-tokens.css</code>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 16 NEXT -->
+<section id="next" class="page signal">
+  <div class="eyebrow" style="color:#0A0A0A"><span class="n" style="background:#0A0A0A;color:#FFFF00">15</span>/next</div>
+  <h2 style="font-size:64px;font-weight:800;max-width:900px">From guide to component library to sites.</h2>
+  <div class="grid g3 mt4" style="gap:22px">
+    <div style="border-top:2px solid #0A0A0A;padding-top:12px"><div class="mono" style="font-size:9.5px;font-weight:600">STEP 1 · AGREE</div><h3 class="mt1" style="font-size:22px">Sign off the direction</h3><p style="color:#0A0A0A;margin-top:6px;font-size:12.5px">Three things need a yes or no: Bricolage Grotesque as the display face, mono text in the logo tag, and Paper as the light background.</p></div>
+    <div style="border-top:2px solid #0A0A0A;padding-top:12px"><div class="mono" style="font-size:9.5px;font-weight:600">STEP 2 · BUILD</div><h3 class="mt1" style="font-size:22px">Component library</h3><p style="color:#0A0A0A;margin-top:6px;font-size:12.5px">A shared package: tokens, Logo, Tag, Button, Badge, Field, Card, ScheduleRow, SpeakerCard, SponsorTier, Nav, Footer. Light and dark from day one.</p></div>
+    <div style="border-top:2px solid #0A0A0A;padding-top:12px"><div class="mono" style="font-size:9.5px;font-weight:600">STEP 3 · SHIP</div><h3 class="mt1" style="font-size:22px">Rebuild the sites</h3><p style="color:#0A0A0A;margin-top:6px;font-size:12.5px">techmids.org first (it has the furthest to travel and no logo today), then conf, then a theme for the events calendar.</p></div>
+  </div>
+  <div class="next-foot"><div class="mono" style="font-size:9.5px;line-height:1.9;text-transform:uppercase;letter-spacing:.06em">Sources reviewed<br>github.com/techmids/techmids.org<br>github.com/techmids/conf.techmids.org<br>events.techmids.org · conf.techmids.org</div><div style="width:150px;height:150px;background:#0A0A0A;color:#FFFF00;display:grid;place-items:center"><svg viewBox="0 0 295.32 152.71" style="width:72%"><use href="#wm"/></svg></div></div>
+</section>
+
+
+</main>
+<footer class="sitefoot"><span><b>TechMids</b> brand guide v1.0 · proposal</span><span><a class="link" href="assets/techmids-tokens.css">techmids-tokens.css</a> · <a class="link" href="pdf/techmids-brand-guide-light.pdf">PDF light</a> · <a class="link" href="pdf/techmids-brand-guide-dark.pdf">PDF dark</a> · <a class="link" href="https://github.com/techmids/branding">Source</a></span></footer>
+<script>
+  (function () {
+    var root = document.documentElement, mq = matchMedia('(prefers-color-scheme: dark)');
+    function apply(pref) {
+      var dark = pref === 'dark' || (pref === 'auto' && mq.matches);
+      root.dataset.theme = dark ? 'dark' : 'light';
+      root.dataset.themePref = pref;
+      document.querySelectorAll('[data-set-theme]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.setTheme === pref); });
+      var pdf = document.querySelector('[data-pdf]');
+      if (pdf) pdf.href = 'pdf/techmids-brand-guide-' + (dark ? 'dark' : 'light') + '.pdf';
+    }
+    document.querySelectorAll('[data-set-theme]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        try { localStorage.setItem('tm-theme', b.dataset.setTheme); } catch (e) {}
+        apply(b.dataset.setTheme);
+      });
+    });
+    mq.addEventListener('change', function () { apply(root.dataset.themePref || 'auto'); });
+    apply(root.dataset.themePref || 'auto');
+  })();
+</script>
+</body>
+</html>
